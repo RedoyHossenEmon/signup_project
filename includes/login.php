@@ -25,7 +25,7 @@
        </div>
        <div class="form-group">
         <span> Forgot Password?</span>
-         <a class="hereBtn" href="index.php?pwd-reset"> reset here</a>
+         <a class="hereBtn" href="index.php?pwd-reset-request"> reset here</a>
        </div>
     </form>
     

@@ -23,8 +23,8 @@ if (session_status() === PHP_SESSION_NONE) {
     }elseif(isset($_SESSION['username'])){
       include 'includes/defult_home.php';
       
-    }elseif(isset($_GET['pwd-reset'])){
-      include 'includes/pwd-reset.php';
+    }elseif(isset($_GET['pwd-reset-request'])){
+      include 'includes/pwd-reset-request.php';
       
     }elseif(isset($_GET['pwd-reset-done'])){
        include 'includes/home.php';

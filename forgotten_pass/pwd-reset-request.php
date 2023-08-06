@@ -6,7 +6,7 @@
   
     <div class="formWraper" style="float:rightt">
       <h2>Reset your password</h2>
-      <form action="classes/pwdReset_setup.php" method="POST">
+      <form action="classes/mail-sending.php" method="POST">
   
         <div class="form-group">
           <label for="email">Email:</label>
