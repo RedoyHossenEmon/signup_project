@@ -1,0 +1,208 @@
+body {
+  background-image: url("images/esther-jiao-ADv0GiMBlmI-unsplash.jpg");
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+li{list-style:none;}
+
+
+.container{
+  width: 95%;
+  margin: 0 auto;
+ 
+}
+
+.formWraper {
+  width: 410px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  float: left;
+}
+
+.formWraper h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-group input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.form-group img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+.menubar {
+  background-color: #f2f2f2;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  margin-right: 20px;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.menu-items {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li {
+  margin-right: 0px;
+  position: relative;
+}
+
+.menu-items li:last-child {
+  margin-right: 0;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+}
+
+.menu-items a:hover {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.menu-items .active {
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.submenu {
+  position: relative;
+}
+
+.submenu-items {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: -20px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+.submenu-items li{
+  margin-bottom:15px;
+  float: right;
+  margin-right: 0px;
+  width: max-content;
+}
+
+.submenu:hover .submenu-items {
+  display: block;
+}
+
+.profile-pic {
+  position: relative;
+}
+
+.profile-pic img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.profile-pic::after {
+  content: '';
+  position: absolute;
+  top: 85%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #53cc44;
+  border-radius: 50%;
+  border: 2px solid #f2f2f2;
+} 
+
+
+
+
+.welcoming{
+  text-align: left !important;
+  color: aquamarine;
+}
+.homewelcome{
+  background: #ffffff45 !important;
+}
+.loginerebtn{
+  color:#ffffffb8
+}
+.hereBtn{text-decoration: none;}
+.hereBtn:hover{text-decoration: underline;}
+
+
+#autoText {
+  font-size: 42px;
+  padding: 10px;
+  margin-top: 20px;
+
+  color: white;
+  width: 600px;
+  float: right;
+  font-family: cursive;
+
+}
