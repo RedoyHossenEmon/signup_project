@@ -56,6 +56,14 @@ li{list-style:none;}
   background-color: #45a049;
 }
 
+.cancelBtn {
+  width: 100%;
+  background: #ddd !important;
+  color: #333 !important;;
+  padding: 8px;
+}
+.form-group input .cancelBtn:Hover{background:#dddddd54;}
+
 .form-group img {
   max-width: 100%;
   margin-bottom: 10px;
@@ -136,11 +144,12 @@ li{list-style:none;}
 .submenu-items {
   display: none;
   position: absolute;
-  top: 150%;
+  top: 125%;
   left: -20px;
   background-color: #f2f2f2;
   padding: 10px;
   border-radius: 5px;
+  padding-top:22px;
 
 }
 .submenu-items li{

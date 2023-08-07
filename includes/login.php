@@ -1,6 +1,5 @@
 
-
-  <div class="container">
+<div class="container">
     
   <div id="autoText" style="float:left"></div>
 

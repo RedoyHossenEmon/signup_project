@@ -100,6 +100,7 @@ class Signup_cntlr extends signup{
     }
     elseif(!preg_match("/^[1-9a-zA-Z]*$/", $this->username)){
         erroFunc("Please insert A valied username! You can not use any symbol or space","name");
+      
         exit();
     }
     elseif(!filter_var($this->email, FILTER_VALIDATE_EMAIL)){

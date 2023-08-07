@@ -1,7 +1,6 @@
 <?php
 
 
-
 class Script {
  public function __construct($text){
   
@@ -50,7 +49,7 @@ echo'
 function addValueTokenSelector(token,selector){
   document.querySelector(".tokenadd").value = token;
   document.querySelector(".selectoradd").value = selector;
-};'
+}';
 
 
 

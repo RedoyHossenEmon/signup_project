@@ -6,7 +6,9 @@ if (session_status() === PHP_SESSION_NONE) {
 <!DOCTYPE html>
 <html>
  <head>  <title> Make your life more easy </title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style> <?php include "customFiles/style.css"; ?>  </style>
+
  </head>
 <body>
 
@@ -14,20 +16,24 @@ if (session_status() === PHP_SESSION_NONE) {
   <?php include 'includes/menu.php'; ?>
 
   <?php 
+
+  function isSession() {
+    
+    if(isset($_SESSION['username'])){ echo "<script>  window.location ='index.php' </script> ";}
+  }
+
+
     if(isset($_GET['login'])) {
-      include "includes/login.php";
-
+    include "includes/login.php";
+    isSession();
     }elseif (isset($_GET['signup'])) {
-      include "includes/signup.php";
-
-    }elseif(isset($_SESSION['username'])){
-      include 'includes/defult_home.php';
-      
+      include "includes/signup.php"; 
+      isSession();
     }elseif(isset($_GET['pwd-reset-request'])){
-      include 'includes/pwd-reset-request.php';
+      include 'forgotten_pass/pwd-reset-request.php';
       
     }elseif(isset($_GET['pwd-reset-done'])){
-       include 'includes/home.php';
+       include 'includes/defult_home.php';
       
     }elseif(isset($_GET['resetting-pwd'])){
        include 'includes/resetting-pwd.php';
@@ -37,7 +43,7 @@ if (session_status() === PHP_SESSION_NONE) {
       
     
     }else{
-      include 'includes/home.php';
+      include 'includes/defult_home.php';
     }
   ?>
 
@@ -63,6 +69,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
     
     ?>
+
   </script>
 
 
