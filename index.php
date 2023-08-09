@@ -29,19 +29,11 @@ if (session_status() === PHP_SESSION_NONE) {
     }elseif (isset($_GET['signup'])) {
       include "includes/signup.php"; 
       isSession();
-    }elseif(isset($_GET['pwd-reset-request'])){
+    }elseif(isset($_GET['forgot-password'])){
+    
       include 'forgotten_pass/pwd-reset-request.php';
       
-    }elseif(isset($_GET['pwd-reset-done'])){
-       include 'includes/defult_home.php';
       
-    }elseif(isset($_GET['resetting-pwd'])){
-       include 'includes/resetting-pwd.php';
-      
-    }elseif(isset($_GET['selector']) && isset($_GET['token'])){
-       include 'includes/resetting-pwd.php';
-      
-    
     }else{
       include 'includes/defult_home.php';
     }

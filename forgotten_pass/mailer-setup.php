@@ -59,7 +59,7 @@ class mailerSetup extends dbClass {
         // Generate token and URL
         $selector = bin2hex(random_bytes(8));
         $token = random_bytes(32);
-        $url = 'localhost/signup_project/includes/resetting-pwd.php?selector=' . $selector . '&token=' . bin2hex($token);
+        $url = 'localhost/signup_project/forgotten_pass/create-pwd-req.php?selector=' . $selector . '&token=' . bin2hex($token);
         $expires = date('U') + 1800;
 
         // Delete any existing records with the given email from the "pwdreset" table

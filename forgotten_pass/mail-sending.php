@@ -42,9 +42,9 @@ if (isset($_POST['pwd-reset-request'])) {
     $reqEmail = $_POST['email'];
 
 
-    if(!filter_var($reqEmail, FILTER_VALIDATE_EMAIL)){
-        erroFunc("Please insert A valied Email!");
-    }
+    // if(!filter_var($reqEmail, FILTER_VALIDATE_EMAIL)){
+    //     erroFunc("Please insert A valied Email!");
+    // }
 
     $forgotEmailcheckClass = new forgotEmailcheckClass;
     if ( $forgotEmailcheckClass->checkEmailExist($reqEmail) === true) {

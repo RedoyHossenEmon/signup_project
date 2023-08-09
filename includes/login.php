@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container subcontainer">
     
   <div id="autoText" style="float:left"></div>
 
@@ -24,7 +24,7 @@
        </div>
        <div class="form-group">
         <span> Forgot Password?</span>
-         <a class="hereBtn" href="index.php?pwd-reset-request"> reset here</a>
+         <a class="hereBtn" href="index.php?forgot-password=reset-mail-request"> reset here</a>
        </div>
     </form>
     
