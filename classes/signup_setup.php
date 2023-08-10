@@ -34,7 +34,7 @@ function erroFunc($alertmsg, $focusId=null) {
   
     if ($stmt->execute(array($username, $password, $email))) {
       
-    setcookie('erroralert', 'Login successfull...', time() + 2, '/signup_project');
+    setcookie('erroralert', 'Signup successfull...', time() + 2, '/signup_project');
     $userId =  $username;
     $_SESSION['username'] = $username;
     checksession();

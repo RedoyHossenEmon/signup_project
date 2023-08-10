@@ -6,6 +6,9 @@ include "dbConnection.php";
 function erroFunc($alertmsg) {  
   header("location:../index.php?login");
   setcookie('erroralert', $alertmsg, time() + 2, '/signup_project');
+  if (isset($_POST['email'])) {
+    setcookie('inputemail', $_POST['email'], time() + 2, '/signup_project');
+  }
   exit();
 }
 
@@ -27,7 +30,7 @@ class signup extends dbClass{
 
     if ($stmt->rowCount() == 0) {
         $stmt = null;
-      erroFunc('User not found, please try again...');
+      erroFunc('User not found, please Signup..');
     setcookie('inputemail', $email, time() + 2, '/signup_project');
 
 

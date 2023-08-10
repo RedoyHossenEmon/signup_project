@@ -37,8 +37,6 @@ function mailSendingFunc($userEmail,$subject,$message ){
  if ($mail->send()) {
     header("Location: ../index.php" );
     setcookie('erroralert', "Please check your email and setup your new password withen 15minutes.", time() + 2, '/signup_project');
-    exit();
-
 
  }else{
    erroFunc("Unexpected error! Please try again..");
@@ -59,25 +57,17 @@ class mailerSetup extends dbClass {
         // Generate token and URL
         $selector = bin2hex(random_bytes(8));
         $token = random_bytes(32);
-        $url = 'localhost/signup_project/forgotten_pass/create-pwd-req.php?selector=' . $selector . '&token=' . bin2hex($token);
+        $hashedToken = password_hash($token, PASSWORD_DEFAULT);
         $expires = date('U') + 1800;
+        $url = 'localhost/signup_project/forgotten_pass/create-pwd-req.php?selector=' . $selector . '&token=' . bin2hex($token);
 
         // Delete any existing records with the given email from the "pwdreset" table
         $sql = "DELETE FROM pwdreset WHERE resetEmail = ?";
         $stmt = $this->connect()->prepare($sql);
 
-        if ($stmt->execute([$this->userEmail])) {
+        if (!$stmt->execute([$this->userEmail])) {
             $stmt->closeCursor();
-
-            // Insert the new reset token and details into the "pwdreset" table
-            $sql = "INSERT INTO pwdreset (resetEmail, resetSelector, resetToken, resetExpires) VALUES (?, ?, ?, ?)";
-            $stmt = $this->connect()->prepare($sql);
-            $hashedToken = password_hash($token, PASSWORD_DEFAULT);
-
-            if (!$stmt->execute([$this->userEmail, $selector, $hashedToken, $expires])) {
-                 erroFunc("Unexpected error! Please try again..");
-                exit();
-                }
+        }
 
                 $stmt->closeCursor();
                 // Send the reset URL to the user's email
@@ -96,12 +86,17 @@ class mailerSetup extends dbClass {
                 </html>'";
 
              mailSendingFunc($this->userEmail,$subject,$message );
-
+            // Insert the new reset token and details into the "pwdreset" table
             
-        } else {
-          erroFunc("Unexpected error! Please try again..");
+            $sql = "INSERT INTO pwdreset (resetEmail, resetSelector, resetToken,  resetExpires) VALUES (?,?,?,?)";
+            $stmt = $this->connect()->prepare($sql);
+
+            if (!$stmt->execute([$this->userEmail, $selector, $hashedToken, $expires])) {
+                 erroFunc("Unexpected error! Please try again..");
+                exit();
+                }
             exit();
-        }
+        
     }
  }
 

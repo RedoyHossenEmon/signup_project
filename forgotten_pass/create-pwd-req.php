@@ -16,7 +16,14 @@ if(isset($_GET['selector']) && isset($_GET['token'])){
   
       if(ctype_xdigit($getSelector) && ctype_xdigit($getToken)){
 
-        header('location:../index.php?create-pwd-req');
+        header('location:../index.php?forgot-password=create-new-password');
+      
+          if (session_status() === PHP_SESSION_NONE) {
+            session_start(); } 
+            
+        $_SESSION['selector'] = $getSelector;
+        $_SESSION['token'] = $getToken;
+        exit();
       }else{
         erroFunc('Your request Could not validate!');
       }
@@ -26,4 +33,13 @@ if(isset($_GET['selector']) && isset($_GET['token'])){
     }
     
     } 
+
+
+
+
+
+
+
+
+
 ?>
