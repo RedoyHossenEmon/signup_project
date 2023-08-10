@@ -26,7 +26,7 @@
         <ul class="submenu-items">
           <li><a href="#">Settings</a></li>
           <li><a href="#">Help</a></li>
-          <li><a href="logout.php">Logout</a></li>
+          <li><a href="includes/logout.php">Logout</a></li>
         </ul>
       <li class="profile-pic">
         <img src="images/esther-jiao-ADv0GiMBlmI-unsplash.jpg" alt="Profile Picture">
