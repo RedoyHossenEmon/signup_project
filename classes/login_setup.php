@@ -32,8 +32,8 @@ class signup extends dbClass{
     }
 
     $usergoted = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    if($password == $usergoted[0]['user_pwd']){
+     $pwdVerify = password_verify($password,  $usergoted[0]['user_pwd']);
+    if($pwdVerify){
       setcookie('erroralert', 'Login successfull...', time() + 2, '/signup_project');
       $username =  $usergoted[0]['username'];
       $_SESSION['username'] = $username;
