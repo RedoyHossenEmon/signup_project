@@ -31,6 +31,7 @@ class signup extends dbClass{
   
   // Function to insert user data into the database
   public function setUser($username, $password, $email) {
+    $hashedpwd = password_hash($password, PASSWORD_DEFAULT)
     $stmt = $this->connect()->prepare("INSERT INTO users (username, user_pwd, user_email) VALUES (?, ?, ?)");
 
     if ($stmt->execute(array($username, $password, $email))) {
